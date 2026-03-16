@@ -24,7 +24,7 @@ public class Main {
       SwingUtilities.invokeLater(() -> gui(s, weatherJson, rate1, rate2));
   }
     private static void gui(Service s, String w, Double r1, Double r2) {
-        JFrame f = new JFrame("zadanie 1 - klient uslug");
+        JFrame f = new JFrame(":3");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(1200, 800);
 
