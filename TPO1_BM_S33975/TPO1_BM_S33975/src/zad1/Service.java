@@ -23,9 +23,9 @@ public class Service {
     private String waluta;
 
     //API klucz do openWeatherApp
-    private final String WEATHER_API_KEY = "dd50b36b482f107164a72dcf63d0d07f";
+    private final String WEATHER_API_KEY = "daj tu api key pogody";
     //Api klucz fixed.io
-    private final String FIXER_API_KEY = "ad519f6e711c02c56170f39a4c55f856";
+    private final String FIXER_API_KEY = "daj tu api key walut";
 
     public Service(String k) {
         this.kraj = k;
