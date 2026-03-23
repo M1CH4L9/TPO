@@ -17,19 +17,20 @@ import java.util.stream.Collectors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class Service {
     private String kraj;
     private String waluta;
+    private String kodISO;
 
     //API klucz do openWeatherApp
-    private final String WEATHER_API_KEY = "daj tu api key pogody";
+    private final String WEATHER_API_KEY = "dd50b36b482f107164a72dcf63d0d07f";
     //Api klucz fixed.io
-    private final String FIXER_API_KEY = "daj tu api key walut";
+    private final String FIXER_API_KEY = "ad519f6e711c02c56170f39a4c55f856";
 
     public Service(String k) {
         this.kraj = k;
         this.waluta = ogarnijWalute(k);
+        this.kodISO = ogarnijKodISO(k);
     }
 
     private String ogarnijWalute(String c) {
@@ -44,8 +45,20 @@ public class Service {
         return null;
     }
 
+    private String ogarnijKodISO(String c) {
+        for (Locale l : Locale.getAvailableLocales()) {
+            if (c.equalsIgnoreCase(l.getDisplayCountry(Locale.ENGLISH))) {
+                return l.getCountry();
+            }
+        }
+        return null;
+    }
+
     public String getWeather(String m) {
-        String u = "https://api.openweathermap.org/data/2.5/weather?q=" + m + "," + kraj + "&appid=" + WEATHER_API_KEY + "&units=metric";
+        String mURL = m.replace(" ", "%20");
+        String kParam = (kodISO != null) ? kodISO : kraj.replace(" ", "%20");
+
+        String u = "https://api.openweathermap.org/data/2.5/weather?q=" + mURL + "," + kParam + "&appid=" + WEATHER_API_KEY + "&units=metric";
         return pobierz(u);
     }
 
@@ -108,5 +121,4 @@ public class Service {
         }
         return null;
     }
-}  
-
+}

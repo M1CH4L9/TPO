@@ -14,15 +14,15 @@ import javafx.scene.Scene;
 import javafx.scene.web.WebView;
 
 public class Main {
-  public static void main(String[] args) {
-    Service s = new Service("Poland");
-    String weatherJson = s.getWeather("Warsaw");
-    Double rate1 = s.getRateFor("USD");
-    Double rate2 = s.getNBPRate();
-    // ...
-    // część uruchamiająca GUI
-      SwingUtilities.invokeLater(() -> gui(s, weatherJson, rate1, rate2));
-  }
+    public static void main(String[] args) {
+        Service s = new Service("Poland");
+        String weatherJson = s.getWeather("Warsaw");
+        Double rate1 = s.getRateFor("USD");
+        Double rate2 = s.getNBPRate();
+        // ...
+        // część uruchamiająca GUI
+        SwingUtilities.invokeLater(() -> gui(s, weatherJson, rate1, rate2));
+    }
     private static void gui(Service s, String w, Double r1, Double r2) {
         JFrame f = new JFrame(":3");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
