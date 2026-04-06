@@ -13,8 +13,6 @@ import java.util.Optional;
 
 public class LogParser {
 
-  public Optional<LogEntry> parseLine(String line) {
-
   //sprawdzenie ipv4
   private static final Pattern IPV4_PATTERN = 
       Pattern.compile("^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$");
