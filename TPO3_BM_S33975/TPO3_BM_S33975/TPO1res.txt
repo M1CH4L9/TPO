@@ -1,0 +1,3 @@
+Zażółć gęślą jaźń. 
+To jest pierwszy plik testowy z glownego folderu.Pchnąć w tę łódź jeża lub ośm skrzyń fig.
+A to jest drugi plik z podkatalogu!
