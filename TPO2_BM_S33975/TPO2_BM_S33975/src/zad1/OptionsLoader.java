@@ -30,6 +30,13 @@ public class OptionsLoader {
             //wyciągnięcie strefy czasowej
             if (trimmedLine.startsWith("serverZoneId:")) {
                 zoneId = trimmedLine.substring("serverZoneId:".length()).trim();
+
+                //usuwamy cudzysłów (pojedynczy lub podwójny), jeśli istnieje, a potem robimy trim()
+                if (zoneId.startsWith("\"") && zoneId.endsWith("\"") && zoneId.length() >= 2) {
+                    zoneId = zoneId.substring(1, zoneId.length() - 1).trim();
+                } else if (zoneId.startsWith("'") && zoneId.endsWith("'") && zoneId.length() >= 2) {
+                    zoneId = zoneId.substring(1, zoneId.length() - 1).trim();
+                }
             }
             //sprawdzenie czy zgadza się z logami
             else if (trimmedLine.startsWith("logLines:")) {
