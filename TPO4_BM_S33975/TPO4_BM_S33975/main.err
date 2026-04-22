@@ -1,0 +1,8 @@
+Exception in thread "chat-server" java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:147)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:155)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+	at java.base/java.nio.channels.ServerSocketChannel.bind(ServerSocketChannel.java:224)
+	at zad1.ChatServer.runServer(ChatServer.java:110)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
