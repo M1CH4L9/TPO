@@ -1,0 +1,17 @@
+test 1:
+portAndDelays: [7799, 0, 50]
+Asia: [30, 3]
+Adam: [30, 3]
+Sara: [30, 3]
+
+test 2:
+portAndDelays: [ 7899, 0, 50]
+Asia: [0, 3]
+Adam: [0, 3]
+Sara: [0, 3]
+
+test 3:
+portAndDelays: [ 9999, 0, 0]
+Asia: [0, 3]
+Adam: [0, 3]
+Sara: [0, 3]
