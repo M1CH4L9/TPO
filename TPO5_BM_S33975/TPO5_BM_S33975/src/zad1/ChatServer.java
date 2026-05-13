@@ -32,7 +32,6 @@ public class ChatServer {
 
     public void startServer() {
         try {
-            // BUG FIX :))))
             //otwieramy port w głównym wątku żeby metoda startServer() nie zakończyła się, dopóki port nie będzie gotowy
             serverSocket = new ServerSocket(port);
             isRunning = true;
@@ -61,8 +60,13 @@ public class ChatServer {
     }
 
     public void stopServer() {
+        try {
+            //dajemy czas wirtualnym wątkom na przeczytanie i przetworzenie ostatnich żądań
+            Thread.sleep(200);
+        } catch (InterruptedException e) {}
+
         isRunning = false;
-        System.out.println("Server stopped"); //wymagane przez polecenie
+        System.out.println("Server stopped");
         broadcastAndLog("ChatServer: chat closed");
 
         try {
